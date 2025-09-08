@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:somi/nav_bar.dart';
-import 'home_page.dart';
-
 
 void main() {
   runApp(const Somi());
