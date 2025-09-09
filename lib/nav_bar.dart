@@ -4,6 +4,7 @@ import 'package:somi/folder_page.dart';
 import 'package:somi/home_page.dart';
 import 'package:somi/profile_page.dart';
 import 'package:somi/search_page.dart';
+import 'package:somi/settings_page.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -20,7 +21,7 @@ class _NavBarState extends State<NavBar> {
     SearchPage(),
     FolderPage(),
     DownloadsPage(),
-    ProfilePage()
+    SettingsPage()
   ];
 
   @override
@@ -49,7 +50,7 @@ class _NavBarState extends State<NavBar> {
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
           BottomNavigationBarItem(icon: Icon(Icons.folder), label: "Library"),
           BottomNavigationBarItem(icon: Icon(Icons.download), label: "Downloads"),
-          BottomNavigationBarItem(icon: Icon(Icons.person_3_outlined), label: "Profile"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
         ],
       ),
 

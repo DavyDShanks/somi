@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:somi/profile_page.dart';
+import 'package:somi/search_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,11 +17,18 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
+        title: Icon(Icons.extension, color: Colors.white),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.search, color: Colors.white),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage()));
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.person, color: Colors.white),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+              
             },
           ),
         ],
