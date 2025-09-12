@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:soumi/downloads_page.dart';
-import 'package:soumi/folder_page.dart';
 import 'package:soumi/home_page.dart';
 import 'package:soumi/profile_page.dart';
 import 'package:soumi/search_page.dart';
-import 'package:soumi/settings_page.dart';
+import 'package:soumi/anilist_page.dart';
+import 'package:soumi/simkl_page.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -17,11 +16,11 @@ class _NavBarState extends State<NavBar> {
   int selectedIndex = 0;
 
   List<Widget> screens = [
+    AnilistPage(),
+    SimklPage(),
     HomePage(),
     SearchPage(),
-    FolderPage(),
-    DownloadsPage(),
-    SettingsPage()
+    ProfilePage()
   ];
 
   @override
@@ -46,11 +45,11 @@ class _NavBarState extends State<NavBar> {
         },
 
         items: [
+          BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/anilist_logo.png') ), label: "Anilist"),
+          BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/simkl_logo.png') ), label: "Simkl"),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(icon: Icon(Icons.folder), label: "Library"),
-          BottomNavigationBarItem(icon: Icon(Icons.download), label: "Downloads"),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
+          BottomNavigationBarItem(icon: CircleAvatar(backgroundImage: AssetImage('assets/profile.png'), radius: 15,), label: "Profile"),
         ],
       ),
 

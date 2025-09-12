@@ -15,6 +15,7 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        leading: BackButton(color: Colors.white),
         toolbarHeight: 60,
         backgroundColor: Colors.black,
         title: Container(
