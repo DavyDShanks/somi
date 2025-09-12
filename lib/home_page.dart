@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:soumi/profile_page.dart';
+// import 'package:soumi/profile_page.dart';
 import 'package:soumi/search_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,7 +17,13 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Icon(Icons.extension, color: Colors.white),
+        title: 
+          IconButton(
+            icon: const Icon(Icons.extension, color: Colors.white),
+            onPressed: () {
+              
+            },
+          ),
         actions: [
           IconButton(
             icon: const Icon(Icons.search, color: Colors.white),
@@ -56,7 +62,12 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: const Center(child: Text('Welcome to Soumi App!')),
+      body: const Center(
+        child: Text(
+          'Welcome to Soumi App!', 
+          style: TextStyle(color: Colors.white, fontSize: 24),
+        ),
+      ),
     );
   }
 }
