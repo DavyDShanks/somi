@@ -7,13 +7,20 @@ class AnilistPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        child: Text(
-          "Anilist Page",
-          style: GoogleFonts.exo2(color: Colors.white, fontSize: 24),
-        ),
+      appBar: AppBar(
+        title: Image.asset("assets/anilist_logo.png", color: Colors.white, height: 25),
+        backgroundColor: Colors.black,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: CircleAvatar(
+              backgroundImage: AssetImage("assets/profile.png"),
+              radius: 15,
+            ),
+          ),
+        ],
       ),
+      backgroundColor: Colors.black,
     );
   }
 }
