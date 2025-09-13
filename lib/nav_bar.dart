@@ -13,7 +13,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  int selectedIndex = 0;
+  int selectedIndex = 2;
 
   List<Widget> screens = [
     AnilistPage(),

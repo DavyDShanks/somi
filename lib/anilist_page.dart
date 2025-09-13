@@ -88,20 +88,26 @@ class _AnilistPageState extends State<AnilistPage> {
         backgroundColor: Colors.transparent,
         elevation: 5,
         title: Center(
-          child: Text(
-            "Anime",
-            style: GoogleFonts.exo2(color: Colors.white),
-          ),
+          child: Text("Anime", style: GoogleFonts.exo2(color: Colors.white)),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: CircleAvatar(
+              backgroundImage: AssetImage("assets/profile.png"),
+              radius: 15,
+            ),
+          ),
+        ],
       ),
       body: GridView.builder(
         controller: _scrollController,
         padding: const EdgeInsets.all(8),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 6,          
-          crossAxisSpacing: 8,        
-          mainAxisSpacing: 8,         
-          childAspectRatio: 0.65,     
+          crossAxisCount: 6,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
+          childAspectRatio: 0.65,
         ),
         itemCount: _animeList.length + (_isLoading ? 1 : 0),
         itemBuilder: (context, index) {
@@ -116,9 +122,7 @@ class _AnilistPageState extends State<AnilistPage> {
           final imageUrl = anime["coverImage"]["large"];
 
           return GestureDetector(
-            onTap: () {
-
-            },
+            onTap: () {},
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Stack(
