@@ -14,7 +14,6 @@ class SimklPage extends StatefulWidget {
 }
 
 class _SimklPageState extends State<SimklPage> {
-
   List trending = [];
 
   @override
@@ -27,7 +26,8 @@ class _SimklPageState extends State<SimklPage> {
     final response = await http.get(
       Uri.parse("https://api.themoviedb.org/3/trending/all/day"),
       headers: {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZmYzOTRlZTk3OGVhMjU5Y2ExNzY1YTg5YjA0NzliOSIsIm5iZiI6MTc1Nzc0MDMwMi40ODcsInN1YiI6IjY4YzRmZDBlMGQ2NzE4Y2VlMjRjYTEzNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3aNdDc7rCd1lQ9LmwOh7jV7fxbcYeDazsucw99yReRk"
+        "Authorization":
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZmYzOTRlZTk3OGVhMjU5Y2ExNzY1YTg5YjA0NzliOSIsIm5iZiI6MTc1Nzc0MDMwMi40ODcsInN1YiI6IjY4YzRmZDBlMGQ2NzE4Y2VlMjRjYTEzNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3aNdDc7rCd1lQ9LmwOh7jV7fxbcYeDazsucw99yReRk",
       },
     );
 
@@ -45,7 +45,11 @@ class _SimklPageState extends State<SimklPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset("assets/simkl_logo.png", color: Colors.white, height: 25),
+        title: Image.asset(
+          "assets/simkl_logo.png",
+          color: Colors.white,
+          height: 25,
+        ),
         backgroundColor: Colors.black,
         actions: [
           IconButton(
@@ -65,14 +69,18 @@ class _SimklPageState extends State<SimklPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Trending",
-                      style: GoogleFonts.poppins(
-                          fontSize: 20, color: Colors.white)),
+                  Text(
+                    "Trending",
+                    style: GoogleFonts.poppins(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
                   const SizedBox(height: 10),
                   SizedBox(
                     height: 200,
                     child: ListView.separated(
-                      
+                      separatorBuilder: (context, index) => const SizedBox(width: 10),
                       scrollDirection: Axis.horizontal,
                       itemCount: trending.length,
                       itemBuilder: (context, index) {
@@ -80,7 +88,9 @@ class _SimklPageState extends State<SimklPage> {
                         final posterPath = item["poster_path"];
                         return InkWell(
                           onTap: () {
-                            print("Clicked on ${item["title"] ?? item["name"] ?? "Unknown"}");
+                            print(
+                              "Clicked on ${item["title"] ?? item["name"] ?? "Unknown"}",
+                            );
                           },
                           child: Container(
                             width: 120,
@@ -91,7 +101,6 @@ class _SimklPageState extends State<SimklPage> {
                                     ? ClipRRect(
                                         borderRadius: BorderRadius.circular(8),
                                         child: Image.network(
-                                          
                                           "https://image.tmdb.org/t/p/w200$posterPath",
                                           fit: BoxFit.cover,
                                           height: 160,
@@ -101,20 +110,22 @@ class _SimklPageState extends State<SimklPage> {
                                         height: 160,
                                         color: Colors.grey,
                                         child: const Center(
-                                          child: Icon(Icons.movie,
-                                              color: Colors.white),
+                                          child: Icon(
+                                            Icons.movie,
+                                            color: Colors.white,
+                                          ),
                                         ),
                                       ),
                                 const SizedBox(height: 5),
                                 Text(
-                                  item["title"] ??
-                                      item["name"] ??
-                                      "Unknown",
+                                  item["title"] ?? item["name"] ?? "Unknown",
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: const TextStyle(
-                                      color: Colors.white, fontSize: 12),
-                                )
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                  ),
+                                ),
                               ],
                             ),
                           ),
