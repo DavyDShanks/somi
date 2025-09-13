@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soumi/settings/settings_buttons.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
@@ -12,9 +13,20 @@ class AboutPage extends StatelessWidget {
           backgroundColor: Colors.black,
           title: const Text('About', style: TextStyle(color: Colors.white)),
       ),
-      body: const Center(
-        child: Text('This is the About Page', style: TextStyle(color: Colors.white)),
+      body: 
+      Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          spacing: 10,
+          children: [
+            SettingsButtons().settingsMenuButton("Github", Icon(Icons.arrow_right, color: Colors.white), context),
+            SettingsButtons().settingsMenuButton("Contact Us", Icon(Icons.arrow_right, color: Colors.white), context),
+            SettingsButtons().settingsMenuButton("Privacy Policy", Icon(Icons.arrow_right, color: Colors.white), context),
+            SettingsButtons().settingsMenuButton("Terms of Service", Icon(Icons.arrow_right, color: Colors.white), context),
+            SettingsButtons().settingsMenuButton("Licenses", Icon(Icons.arrow_right, color: Colors.white), context),
+        ]
       ),
+      )
     );
   }
 }

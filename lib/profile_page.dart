@@ -36,13 +36,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
                 SizedBox(height: 40),
-                settingsMenuButton("General", Icon(Icons.arrow_right, color: Colors.white)),
-                settingsMenuButton("Player", Icon(Icons.arrow_right, color: Colors.white)),
-                settingsMenuButton("Provider", Icon(Icons.arrow_right, color: Colors.white)),
-                settingsMenuButton("Layout", Icon(Icons.arrow_right, color: Colors.white)),
-                settingsMenuButton("Update and Backup", Icon(Icons.arrow_right, color: Colors.white)),
-                settingsMenuButton("Extensions", Icon(Icons.arrow_right, color: Colors.white)),
-                settingsMenuButton("About", Icon(Icons.arrow_right, color: Colors.white)),
+                settingsMenuButton("General", Icon(Icons.arrow_right, color: Colors.white), context),
+                settingsMenuButton("Player", Icon(Icons.arrow_right, color: Colors.white), context),
+                settingsMenuButton("Provider", Icon(Icons.arrow_right, color: Colors.white), context),
+                settingsMenuButton("Layout", Icon(Icons.arrow_right, color: Colors.white), context),
+                settingsMenuButton("Update and Backup", Icon(Icons.arrow_right, color: Colors.white), context),
+                settingsMenuButton("Extensions", Icon(Icons.arrow_right, color: Colors.white), context),
+                settingsMenuButton("About", Icon(Icons.arrow_right, color: Colors.white), context),
               ],
             ),
           ),
@@ -52,7 +52,7 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 }
 
-Widget settingsMenuButton(String title, Icon icon) {
+Widget settingsMenuButton(String title, Icon icon, BuildContext context) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
       backgroundColor: Colors.black,
@@ -62,6 +62,7 @@ Widget settingsMenuButton(String title, Icon icon) {
       ),
     ),
     onPressed: () {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => AboutPage()));
     },
     child: Row(
       children: [
